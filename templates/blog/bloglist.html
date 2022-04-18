@@ -1,0 +1,13 @@
+{% extends '../base.html' %}
+{% block content %}
+<h1> Blog Liste Sayfası </h1>
+{% for blog in bloglar %}
+<a href="{% url 'blogdetay' id=blog.id %}"> 
+<h1> {{ blog.baslik }} </h1>
+<p> {{ blog.icerik }} </p>
+<p> {{ blog.kayitzamani }} </p>
+{% endfor %}
+
+<a href="{% url 'iletisimlist' %}">İletişim Sayfası</a>
+<a href="{% url 'home' %}">Anasayfa</a>
+{% endblock content %}
